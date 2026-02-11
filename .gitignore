@@ -1,0 +1,76 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+**/dist/
+**/build/
+out/
+
+# .NET
+bin/
+obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+pgdata/
+postgres_data/
+
+# Redis
+redis_data/
+
+# Docker
+docker-compose.override.yml
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Test coverage
+coverage/
+*.cover
+.coverage
+.coverage.*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store

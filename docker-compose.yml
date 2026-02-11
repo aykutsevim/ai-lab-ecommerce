@@ -1,0 +1,171 @@
+version: '3.9'
+
+services:
+  # ═══════════════════════════════════════════════════════════════════════════
+  # PostgreSQL Database
+  # ═══════════════════════════════════════════════════════════════════════════
+  postgres:
+    image: postgres:16-alpine
+    container_name: gamevault-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-gamevault}
+      POSTGRES_USER: ${POSTGRES_USER:-gamevault}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-gamevault}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - gamevault-network
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Redis Cache
+  # ═══════════════════════════════════════════════════════════════════════════
+  redis:
+    image: redis:7-alpine
+    container_name: gamevault-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redisdata:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - gamevault-network
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Backend API (.NET 10)
+  # ═══════════════════════════════════════════════════════════════════════════
+  api:
+    build:
+      context: ./src/backend
+      dockerfile: GameVault.Api/Dockerfile
+    container_name: gamevault-api
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT:-Development}
+      - ASPNETCORE_URLS=http://+:5000
+      - ConnectionStrings__DefaultConnection=Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      - ConnectionStrings__Redis=${REDIS_HOST}:${REDIS_PORT}
+      - JwtSettings__Secret=${JWT_SECRET}
+      - JwtSettings__Issuer=${JWT_ISSUER}
+      - JwtSettings__Audience=${JWT_AUDIENCE}
+      - JwtSettings__AccessTokenExpiryMinutes=${JWT_ACCESS_TOKEN_EXPIRY_MINUTES:-15}
+      - JwtSettings__RefreshTokenExpiryDays=${JWT_REFRESH_TOKEN_EXPIRY_DAYS:-7}
+      - OllamaSettings__BaseUrl=${OLLAMA_BASE_URL}
+      - OllamaSettings__Model=${OLLAMA_MODEL}
+      - OllamaSettings__TimeoutSeconds=${OLLAMA_TIMEOUT_SECONDS:-120}
+      - OllamaSettings__MaxRetries=${OLLAMA_MAX_RETRIES:-3}
+      - OllamaSettings__SummaryMinComments=${OLLAMA_SUMMARY_MIN_COMMENTS:-3}
+      - OllamaSettings__SummaryMaxTokens=${OLLAMA_SUMMARY_MAX_TOKENS:-500}
+      - OllamaSettings__JobIntervalSeconds=${OLLAMA_SUMMARY_JOB_INTERVAL_SECONDS:-60}
+      - CorsSettings__AllowedOrigins=${CORS_ORIGINS}
+      - CacheSettings__Enabled=${CACHE_ENABLED:-true}
+      - CacheSettings__DefaultExpiryMinutes=${CACHE_DEFAULT_EXPIRY_MINUTES:-30}
+      - SeedSettings__AutoMigrate=${AUTO_MIGRATE:-true}
+      - SeedSettings__AutoSeed=${AUTO_SEED:-true}
+      - SeedSettings__SeedMockComments=${SEED_MOCK_COMMENTS:-true}
+      - SeedSettings__CommentsPerProduct=${SEED_COMMENTS_PER_PRODUCT:-15}
+      - Logging__LogLevel__Default=${LOG_LEVEL:-Information}
+    volumes:
+      - ./db/seed:/app/seed:ro
+      - ./images:/app/wwwroot/images:ro
+      - api-uploads:/app/uploads
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - gamevault-network
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Storefront (React 19 SPA)
+  # ═══════════════════════════════════════════════════════════════════════════
+  storefront:
+    build:
+      context: ./src/frontend/storefront
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL}
+    container_name: gamevault-storefront
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - gamevault-network
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Admin Panel (React 19 SPA)
+  # ═══════════════════════════════════════════════════════════════════════════
+  admin:
+    build:
+      context: ./src/frontend/admin
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL}
+    container_name: gamevault-admin
+    restart: unless-stopped
+    ports:
+      - "3001:80"
+    networks:
+      - gamevault-network
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Nginx Reverse Proxy
+  # ═══════════════════════════════════════════════════════════════════════════
+  nginx:
+    image: nginx:alpine
+    container_name: gamevault-nginx
+    restart: unless-stopped
+    ports:
+      - "${NGINX_PORT:-80}:80"
+      - "${NGINX_SSL_PORT:-443}:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./images:/usr/share/nginx/html/images:ro
+    depends_on:
+      - api
+      - storefront
+      - admin
+    networks:
+      - gamevault-network
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Networks
+# ═══════════════════════════════════════════════════════════════════════════
+networks:
+  gamevault-network:
+    driver: bridge
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Volumes
+# ═══════════════════════════════════════════════════════════════════════════
+volumes:
+  pgdata:
+    driver: local
+  redisdata:
+    driver: local
+  api-uploads:
+    driver: local

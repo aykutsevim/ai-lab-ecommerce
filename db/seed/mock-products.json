@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "generated": "2026-02-09",
+    "totalProducts": 10,
+    "categories": [
+      {
+        "slug": "game-consoles",
+        "name": "Game Consoles",
+        "count": 4
+      },
+      {
+        "slug": "accessories",
+        "name": "Accessories",
+        "count": 6
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "gc-001",
+      "name": "NeoStation 6 Pro",
+      "slug": "neostation-6-pro",
+      "category": "game-consoles",
+      "brand": "NeoStation",
+      "price": 549.99,
+      "currency": "USD",
+      "rating": 4.8,
+      "reviewCount": 2340,
+      "inStock": true,
+      "stockCount": 58,
+      "tags": [
+        "console",
+        "next-gen",
+        "4k",
+        "VR-ready"
+      ],
+      "shortDescription": "Next-gen gaming powerhouse with 8K output, ray tracing, and ultra-fast SSD.",
+      "description": "The NeoStation 6 Pro delivers unparalleled gaming performance with its custom 12-core processor, 16GB GDDR7 RAM, and 2TB NVMe SSD. Experience games in stunning 8K resolution with hardware-accelerated ray tracing. The whisper-quiet cooling system ensures marathon sessions stay comfortable. Backward compatible with thousands of titles.",
+      "specs": {
+        "processor": "Custom 12-core Zen 5",
+        "ram": "16GB GDDR7",
+        "storage": "2TB NVMe SSD",
+        "resolution": "Up to 8K",
+        "connectivity": "Wi-Fi 7, Bluetooth 5.4, HDMI 2.1"
+      },
+      "variants": [
+        {
+          "name": "Midnight Black",
+          "color": "#1a1a2e",
+          "image": "/images/neostation-6-pro_midnight-black.png"
+        },
+        {
+          "name": "Glacier White",
+          "color": "#e0e0e0",
+          "image": "/images/neostation-6-pro_glacier-white.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/neostation-6-pro_midnight-black.png",
+          "alt": "NeoStation 6 Pro \u2014 Midnight Black",
+          "variant": "Midnight Black"
+        },
+        {
+          "url": "/images/neostation-6-pro_glacier-white.png",
+          "alt": "NeoStation 6 Pro \u2014 Glacier White",
+          "variant": "Glacier White"
+        }
+      ],
+      "compareAtPrice": 599.99
+    },
+    {
+      "id": "gc-002",
+      "name": "XVault Series Z",
+      "slug": "xvault-series-z",
+      "category": "game-consoles",
+      "brand": "XVault",
+      "price": 499.99,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 1876,
+      "inStock": true,
+      "stockCount": 120,
+      "tags": [
+        "console",
+        "next-gen",
+        "game-pass",
+        "4k"
+      ],
+      "shortDescription": "The most powerful XVault ever. 12 teraflops of raw gaming performance.",
+      "description": "XVault Series Z is built for speed and power. Featuring a custom RDNA 4 GPU delivering 12 teraflops, paired with a Zen 5 CPU and 1TB custom SSD, load times are virtually eliminated. Quick Resume lets you switch between multiple games instantly. Thousands of games across four generations are ready to play.",
+      "specs": {
+        "processor": "Custom Zen 5 8-core",
+        "gpu": "RDNA 4 \u2013 12 TFLOPS",
+        "storage": "1TB Custom SSD",
+        "resolution": "Up to 4K @ 120fps",
+        "connectivity": "Wi-Fi 6E, HDMI 2.1, USB-C"
+      },
+      "variants": [
+        {
+          "name": "Carbon Black",
+          "color": "#0d1117",
+          "image": "/images/xvault-series-z_carbon-black.png"
+        },
+        {
+          "name": "Velocity Green",
+          "color": "#2ea043",
+          "image": "/images/xvault-series-z_velocity-green.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/xvault-series-z_carbon-black.png",
+          "alt": "XVault Series Z \u2014 Carbon Black",
+          "variant": "Carbon Black"
+        },
+        {
+          "url": "/images/xvault-series-z_velocity-green.png",
+          "alt": "XVault Series Z \u2014 Velocity Green",
+          "variant": "Velocity Green"
+        }
+      ]
+    },
+    {
+      "id": "gc-003",
+      "name": "Tendo FlexPlay",
+      "slug": "tendo-flexplay",
+      "category": "game-consoles",
+      "brand": "Tendo",
+      "price": 349.99,
+      "currency": "USD",
+      "rating": 4.9,
+      "reviewCount": 5420,
+      "inStock": true,
+      "stockCount": 200,
+      "tags": [
+        "console",
+        "hybrid",
+        "portable",
+        "family"
+      ],
+      "shortDescription": "Play anywhere \u2014 dock it, hold it, or share it. Gaming freedom redefined.",
+      "description": "The Tendo FlexPlay is the ultimate hybrid console. Seamlessly transition between TV mode and handheld mode with a stunning 7-inch OLED display. Detachable FlexPad controllers support motion controls and HD rumble. With 64GB internal storage expandable via microSD, your entire library travels with you.",
+      "specs": {
+        "display": "7\" OLED 1080p",
+        "battery": "6-9 hours",
+        "storage": "64GB + microSD",
+        "weight": "320g",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.0, USB-C"
+      },
+      "variants": [
+        {
+          "name": "Neon Red/Blue",
+          "color": "#ff4757",
+          "image": "/images/tendo-flexplay_neon-red-blue.png"
+        },
+        {
+          "name": "Electric Purple",
+          "color": "#3742fa",
+          "image": "/images/tendo-flexplay_electric-purple.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/tendo-flexplay_neon-red-blue.png",
+          "alt": "Tendo FlexPlay \u2014 Neon Red/Blue",
+          "variant": "Neon Red/Blue"
+        },
+        {
+          "url": "/images/tendo-flexplay_electric-purple.png",
+          "alt": "Tendo FlexPlay \u2014 Electric Purple",
+          "variant": "Electric Purple"
+        }
+      ]
+    },
+    {
+      "id": "gc-004",
+      "name": "RetroVault Mini Classic",
+      "slug": "retrovault-mini-classic",
+      "category": "game-consoles",
+      "brand": "RetroVault",
+      "price": 89.99,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 980,
+      "inStock": true,
+      "stockCount": 340,
+      "tags": [
+        "console",
+        "retro",
+        "classic",
+        "plug-and-play"
+      ],
+      "shortDescription": "Relive the golden age \u2014 50 built-in classics in a miniature console.",
+      "description": "The RetroVault Mini Classic is a lovingly crafted miniature replica of the iconic 1990 console, preloaded with 50 of the greatest retro games. Simply plug into any TV via HDMI and start playing. CRT filter options, save states, and two included wireless controllers make this the ultimate nostalgia trip.",
+      "specs": {
+        "games": "50 built-in titles",
+        "output": "720p/1080p HDMI",
+        "controllers": "2x wireless included",
+        "power": "USB-C powered",
+        "dimensions": "4\" x 3\" x 1.5\""
+      },
+      "variants": [
+        {
+          "name": "Classic Cream",
+          "color": "#f5f0e1",
+          "image": "/images/retrovault-mini-classic_classic-cream.png"
+        },
+        {
+          "name": "Walnut Edition",
+          "color": "#8b7355",
+          "image": "/images/retrovault-mini-classic_walnut-edition.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/retrovault-mini-classic_classic-cream.png",
+          "alt": "RetroVault Mini Classic \u2014 Classic Cream",
+          "variant": "Classic Cream"
+        },
+        {
+          "url": "/images/retrovault-mini-classic_walnut-edition.png",
+          "alt": "RetroVault Mini Classic \u2014 Walnut Edition",
+          "variant": "Walnut Edition"
+        }
+      ],
+      "compareAtPrice": 99.99
+    },
+    {
+      "id": "ac-001",
+      "name": "ProGrip Elite Controller",
+      "slug": "progrip-elite-controller",
+      "category": "accessories",
+      "brand": "ProGrip",
+      "price": 79.99,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 1230,
+      "inStock": true,
+      "stockCount": 450,
+      "tags": [
+        "controller",
+        "wireless",
+        "pro",
+        "customizable"
+      ],
+      "shortDescription": "Tournament-grade wireless controller with adjustable triggers and remappable back paddles.",
+      "description": "Dominate the competition with the ProGrip Elite Controller. Featuring hall-effect analog sticks with zero drift, adjustable hair triggers, 4 remappable back paddles, and textured rubber grips. The rechargeable 40-hour battery and Bluetooth 5.3 connection ensure you're always in the game.",
+      "specs": {
+        "connectivity": "Bluetooth 5.3 / USB-C",
+        "battery": "40 hours",
+        "features": "Hall-effect sticks, adjustable triggers, 4 back paddles",
+        "weight": "250g",
+        "compatibility": "NeoStation, XVault, PC"
+      },
+      "variants": [
+        {
+          "name": "Stealth Black",
+          "color": "#2d3436",
+          "image": "/images/progrip-elite-controller_stealth-black.png"
+        },
+        {
+          "name": "Arctic White",
+          "color": "#dfe6e9",
+          "image": "/images/progrip-elite-controller_arctic-white.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/progrip-elite-controller_stealth-black.png",
+          "alt": "ProGrip Elite Controller \u2014 Stealth Black",
+          "variant": "Stealth Black"
+        },
+        {
+          "url": "/images/progrip-elite-controller_arctic-white.png",
+          "alt": "ProGrip Elite Controller \u2014 Arctic White",
+          "variant": "Arctic White"
+        }
+      ],
+      "subcategory": "controllers"
+    },
+    {
+      "id": "ac-002",
+      "name": "SonicWave 7.1 Headset",
+      "slug": "sonicwave-71-headset",
+      "category": "accessories",
+      "brand": "SonicWave",
+      "price": 129.99,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 870,
+      "inStock": true,
+      "stockCount": 210,
+      "tags": [
+        "headset",
+        "wireless",
+        "7.1",
+        "noise-cancelling"
+      ],
+      "shortDescription": "Immersive 7.1 surround sound headset with active noise cancellation and 30-hour battery.",
+      "description": "Hear every footstep with the SonicWave 7.1. Custom 50mm drivers deliver thunderous bass and crystal-clear highs. Active noise cancellation blocks distractions while the retractable boom mic with AI noise filtering ensures your callouts are heard. Memory foam ear cushions keep you comfortable for hours.",
+      "specs": {
+        "drivers": "50mm Neodymium",
+        "surround": "7.1 Virtual Surround",
+        "battery": "30 hours",
+        "mic": "Retractable boom with AI noise filter",
+        "weight": "290g"
+      },
+      "variants": [
+        {
+          "name": "Onyx Black",
+          "color": "#2d3436",
+          "image": "/images/sonicwave-71-headset_onyx-black.png"
+        },
+        {
+          "name": "Ember Orange",
+          "color": "#e17055",
+          "image": "/images/sonicwave-71-headset_ember-orange.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/sonicwave-71-headset_onyx-black.png",
+          "alt": "SonicWave 7.1 Headset \u2014 Onyx Black",
+          "variant": "Onyx Black"
+        },
+        {
+          "url": "/images/sonicwave-71-headset_ember-orange.png",
+          "alt": "SonicWave 7.1 Headset \u2014 Ember Orange",
+          "variant": "Ember Orange"
+        }
+      ],
+      "compareAtPrice": 149.99,
+      "subcategory": "audio"
+    },
+    {
+      "id": "ac-003",
+      "name": "ChargeDock Duo Station",
+      "slug": "chargedock-duo-station",
+      "category": "accessories",
+      "brand": "ChargeDock",
+      "price": 39.99,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 560,
+      "inStock": true,
+      "stockCount": 600,
+      "tags": [
+        "charging",
+        "dock",
+        "dual",
+        "LED"
+      ],
+      "shortDescription": "Charge two controllers simultaneously with LED status indicators.",
+      "description": "Keep your controllers always ready with the ChargeDock Duo Station. The sleek low-profile design fits any setup. Drop-in magnetic alignment makes docking effortless. LED indicators show charge status at a glance \u2014 amber for charging, green for full. Compatible with all major controllers via USB-C adapters included.",
+      "specs": {
+        "slots": "2 controllers",
+        "charging": "USB-C, 5V/2A per slot",
+        "indicators": "LED status (amber/green)",
+        "time": "~2.5 hours full charge",
+        "compatibility": "Universal USB-C"
+      },
+      "variants": [
+        {
+          "name": "Matte Black",
+          "color": "#1e272e",
+          "image": "/images/chargedock-duo-station_matte-black.png"
+        },
+        {
+          "name": "Pearl White",
+          "color": "#d2dae2",
+          "image": "/images/chargedock-duo-station_pearl-white.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/chargedock-duo-station_matte-black.png",
+          "alt": "ChargeDock Duo Station \u2014 Matte Black",
+          "variant": "Matte Black"
+        },
+        {
+          "url": "/images/chargedock-duo-station_pearl-white.png",
+          "alt": "ChargeDock Duo Station \u2014 Pearl White",
+          "variant": "Pearl White"
+        }
+      ],
+      "subcategory": "charging"
+    },
+    {
+      "id": "ac-004",
+      "name": "VisionGuard Gaming Monitor",
+      "slug": "visionguard-gaming-monitor",
+      "category": "accessories",
+      "brand": "VisionGuard",
+      "price": 399.99,
+      "currency": "USD",
+      "rating": 4.8,
+      "reviewCount": 1540,
+      "inStock": true,
+      "stockCount": 75,
+      "tags": [
+        "monitor",
+        "4k",
+        "144hz",
+        "HDR"
+      ],
+      "shortDescription": "27\" 4K IPS display with 144Hz refresh rate, 1ms response, and HDR600.",
+      "description": "See the game before your opponents with the VisionGuard 27\" gaming monitor. The 4K IPS panel delivers vibrant colors with 98% DCI-P3 coverage and HDR600 certification. A 144Hz refresh rate with 1ms GtG response time and adaptive sync eliminate tearing and ghosting. Built-in KVM switch and USB-C with 90W power delivery make it a productivity powerhouse too.",
+      "specs": {
+        "panel": "27\" IPS 4K (3840x2160)",
+        "refresh": "144Hz",
+        "response": "1ms GtG",
+        "hdr": "HDR600, 98% DCI-P3",
+        "ports": "2x HDMI 2.1, 1x DP 1.4, USB-C 90W PD"
+      },
+      "variants": [
+        {
+          "name": "Void Black",
+          "color": "#0c0c0c",
+          "image": "/images/visionguard-gaming-monitor_void-black.png"
+        },
+        {
+          "name": "Gunmetal",
+          "color": "#485460",
+          "image": "/images/visionguard-gaming-monitor_gunmetal.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/visionguard-gaming-monitor_void-black.png",
+          "alt": "VisionGuard Gaming Monitor \u2014 Void Black",
+          "variant": "Void Black"
+        },
+        {
+          "url": "/images/visionguard-gaming-monitor_gunmetal.png",
+          "alt": "VisionGuard Gaming Monitor \u2014 Gunmetal",
+          "variant": "Gunmetal"
+        }
+      ],
+      "compareAtPrice": 449.99,
+      "subcategory": "displays"
+    },
+    {
+      "id": "ac-005",
+      "name": "TurboLink HDMI 2.1 Cable",
+      "slug": "turbolink-hdmi-cable",
+      "category": "accessories",
+      "brand": "TurboLink",
+      "price": 24.99,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 2100,
+      "inStock": true,
+      "stockCount": 1200,
+      "tags": [
+        "cable",
+        "HDMI",
+        "8K",
+        "braided"
+      ],
+      "shortDescription": "Ultra-high-speed braided HDMI 2.1 cable \u2014 8K@60Hz, 4K@120Hz ready.",
+      "description": "Unlock your console's full potential with the TurboLink HDMI 2.1 cable. Supporting 48Gbps bandwidth for 8K@60Hz and 4K@120Hz, this cable ensures zero signal loss. The braided nylon jacket and gold-plated connectors guarantee durability. Available in 6ft and 10ft lengths.",
+      "specs": {
+        "standard": "HDMI 2.1 Ultra High Speed",
+        "bandwidth": "48Gbps",
+        "resolution": "8K@60Hz / 4K@120Hz",
+        "length": "6ft (1.8m)",
+        "build": "Braided nylon, gold-plated connectors"
+      },
+      "variants": [
+        {
+          "name": "Charcoal",
+          "color": "#2d3436",
+          "image": "/images/turbolink-hdmi-cable_charcoal.png"
+        },
+        {
+          "name": "Cobalt Blue",
+          "color": "#0984e3",
+          "image": "/images/turbolink-hdmi-cable_cobalt-blue.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/turbolink-hdmi-cable_charcoal.png",
+          "alt": "TurboLink HDMI 2.1 Cable \u2014 Charcoal",
+          "variant": "Charcoal"
+        },
+        {
+          "url": "/images/turbolink-hdmi-cable_cobalt-blue.png",
+          "alt": "TurboLink HDMI 2.1 Cable \u2014 Cobalt Blue",
+          "variant": "Cobalt Blue"
+        }
+      ],
+      "subcategory": "cables"
+    },
+    {
+      "id": "ac-006",
+      "name": "ArcadeStick Pro Tournament",
+      "slug": "arcadestick-pro-tournament",
+      "category": "accessories",
+      "brand": "ArcadeStick",
+      "price": 199.99,
+      "currency": "USD",
+      "rating": 4.9,
+      "reviewCount": 430,
+      "inStock": true,
+      "stockCount": 45,
+      "tags": [
+        "arcade",
+        "fight-stick",
+        "tournament",
+        "mechanical"
+      ],
+      "shortDescription": "Premium fight stick with Sanwa buttons and precision joystick for competitive play.",
+      "description": "Built for the FGC, the ArcadeStick Pro Tournament features genuine Sanwa OBSF-30 buttons and a JLF joystick with an octagonal gate. The heavy steel chassis stays planted during intense matches. Fully moddable with easy-access internals. Compatible with NeoStation, XVault, Tendo, and PC.",
+      "specs": {
+        "buttons": "Sanwa OBSF-30 x8",
+        "stick": "Sanwa JLF w/ octagonal gate",
+        "base": "Steel chassis, anti-slip rubber",
+        "connectivity": "USB-C / Bluetooth",
+        "weight": "2.8kg"
+      },
+      "variants": [
+        {
+          "name": "Tournament Black",
+          "color": "#0c0c0c",
+          "image": "/images/arcadestick-pro-tournament_tournament-black.png"
+        },
+        {
+          "name": "Crimson Edition",
+          "color": "#c0392b",
+          "image": "/images/arcadestick-pro-tournament_crimson-edition.png"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/arcadestick-pro-tournament_tournament-black.png",
+          "alt": "ArcadeStick Pro Tournament \u2014 Tournament Black",
+          "variant": "Tournament Black"
+        },
+        {
+          "url": "/images/arcadestick-pro-tournament_crimson-edition.png",
+          "alt": "ArcadeStick Pro Tournament \u2014 Crimson Edition",
+          "variant": "Crimson Edition"
+        }
+      ],
+      "compareAtPrice": 229.99,
+      "subcategory": "controllers"
+    }
+  ]
+}

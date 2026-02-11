@@ -1,0 +1,55 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Docker Compose Development Overrides
+# ═══════════════════════════════════════════════════════════════════════════
+# Copy this file to docker-compose.override.yml for local development
+# This file enables hot-reload and development-friendly settings
+# ═══════════════════════════════════════════════════════════════════════════
+
+version: '3.9'
+
+services:
+  # Backend API - Development mode with hot reload
+  api:
+    build:
+      target: development
+    volumes:
+      - ./src/backend:/app:cached
+      - ./db/seed:/app/seed:ro
+      - ./images:/app/wwwroot/images:ro
+      - /app/GameVault.Api/bin
+      - /app/GameVault.Api/obj
+      - /app/GameVault.Core/bin
+      - /app/GameVault.Core/obj
+      - /app/GameVault.Infrastructure/bin
+      - /app/GameVault.Infrastructure/obj
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+      - DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
+    command: dotnet watch run --project GameVault.Api/GameVault.Api.csproj --no-restore
+
+  # Storefront - Development mode with Vite dev server
+  storefront:
+    build:
+      target: development
+    volumes:
+      - ./src/frontend/storefront:/app:cached
+      - /app/node_modules
+    ports:
+      - "3000:5173"  # Vite dev server port
+    environment:
+      - NODE_ENV=development
+    command: npm run dev -- --host 0.0.0.0
+
+  # Admin - Development mode with Vite dev server
+  admin:
+    build:
+      target: development
+    volumes:
+      - ./src/frontend/admin:/app:cached
+      - /app/node_modules
+    ports:
+      - "3001:5173"  # Vite dev server port
+    environment:
+      - NODE_ENV=development
+    command: npm run dev -- --host 0.0.0.0
